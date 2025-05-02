@@ -94,7 +94,7 @@ def train(rank, world_size, master_addr, master_port):
 
     if rank == 0:
         import matplotlib.pyplot as plt
-        with open("training_log_resnet.json", "w") as f:
+        with open("training_log_resnet.json", "a") as f:
             json.dump({"iterations": iterations, "timestamps": timestamps}, f)
         plt.plot(timestamps, iterations)
         plt.xlabel("Time (s)")
